@@ -7,7 +7,7 @@ function Matrix(opts) {
 }
 
 // Object.assign(Matrix, LedControl, {
-//   CHARS: LedControl.MATRIX_CHARS
+//   MATRIX_CHARS: LedControl.MATRIX_CHARS
 // });
 
 module.exports = Matrix;

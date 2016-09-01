@@ -117,7 +117,7 @@ function LedControl(opts) {
    */
   var devices = opts.devices || (opts.addresses ? opts.addresses.length : 1);
 
-  this.memory = Array(64).fill(0);
+  this.memory = [];
 
   opts.dims = opts.dims || LedControl.MATRIX_DIMENSIONS["8x8"];
   if (typeof opts.dims === "string") {
@@ -782,9 +782,9 @@ Controllers = {
         clock: opts.pins.clock,
         cs: opts.pins.cs || opts.pins.latch
       };
-      ["data", "clock", "cs"].forEach(function(pin) {
-        this.io.pinMode(this.pins[pin], this.io.MODES.OUTPUT);
-      }, this);
+      // ["data", "clock", "cs"].forEach(function(pin) {
+      //   this.io.pinMode(this.pins[pin], this.io.MODES.OUTPUT);
+      // }, this);
       // NOTE: Currently unused, these will form
       // the basis for the `setup` constructor option
       // var setup = Object.assign({}, LedControl.DEFAULTS, opts.setup || {});
@@ -841,17 +841,17 @@ Controllers = {
           same way that the code below does, but that's not the case. The result is
           all leds in the matrix are lit and none can be cleared.
           */
-        if (this.isMatrix) {
-          this.send(device, LedControl.OP.DECODING, 0);
-        }
+        // if (this.isMatrix) {
+        //   this.send(device, LedControl.OP.DECODING, 0);
+        // }
 
-        this.send(device, LedControl.OP.BRIGHTNESS, 3);
-        this.send(device, LedControl.OP.SCANLIMIT, 7);
-        this.send(device, LedControl.OP.SHUTDOWN, 1);
-        this.send(device, LedControl.OP.DISPLAYTEST, 0);
+        // this.send(device, LedControl.OP.BRIGHTNESS, 3);
+        // this.send(device, LedControl.OP.SCANLIMIT, 7);
+        // this.send(device, LedControl.OP.SHUTDOWN, 1);
+        // this.send(device, LedControl.OP.DISPLAYTEST, 0);
 
-        this.clear(device);
-        this.on(device);
+        // this.clear(device);
+        // this.on(device);
       }
       return this;
 

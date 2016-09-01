@@ -32,6 +32,8 @@ var buffer = function(txt, font, numOfDevices){
 		// 	[23, 9, 10, 11, 12, 13, 14, 15] //a character
 		// ]
 	});
+	
+	// console.log(dataArr);
 
 	dataArr = transpose(dataArr);
 	// [

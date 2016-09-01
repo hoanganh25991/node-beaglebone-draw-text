@@ -14,14 +14,8 @@ var matrix = new Matrix({
 	controller: 'MAX 7219'
 });
 
-matrix.board = b;
-// matrix.on();
-
-// matrix.on();
-//
-// matrix.board = board;
-//
-//
+matrix.io = b;
+matrix.MATRIX_CHARS = require('./led/led-chars').MATRIX_CHARS;
 matrix.drawText = drawTxt.bind(matrix);
 
-matrix.drawText('abc');
+matrix.drawText('a.Torin');
