@@ -13,10 +13,10 @@ var drawText = function(spiData){
 			//seprate by each [8-bit]
 			//read at 1st-2-3...-7
 			for(var i = 0; i < 8; i++){
-				matrix.io.digitalWrite(3, 0);
-				matrix.io.digitalWrite(2, spiData[8 * (j - 1) + i]);
+				matrix.io.digitalWrite(matrix.pins.clock, 0);
+				matrix.io.digitalWrite(matrix.pins.data, spiData[8 * (j - 1) + i]);
 				// matrix.io.digitalWrite(2, spiData[8 * j + i]);
-				matrix.io.digitalWrite(3, 1);
+				matrix.io.digitalWrite(matrix.pins.clock, 1);
 			}
 		}
 
